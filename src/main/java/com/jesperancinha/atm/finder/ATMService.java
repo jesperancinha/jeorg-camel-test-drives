@@ -13,8 +13,7 @@ public class ATMService {
     private ATMLocatorService atmLocatorService;
 
     public ATMProvider getATMProvider(String city) throws IOException {
-//        return ATMProvider.builder().city(city).build();
-        return ATMProvider.builder().atmMachines(atmLocatorService.getAtmPerCity(city))
+        return ATMProvider.builder().atmMachines(atmLocatorService.getAtmPerCity(city.toUpperCase()))
                 .city(city).build();
     }
 }

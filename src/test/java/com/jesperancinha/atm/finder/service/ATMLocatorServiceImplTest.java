@@ -8,6 +8,7 @@ import org.apache.camel.language.Bean;
 import org.apache.camel.spring.javaconfig.SingleRouteCamelConfiguration;
 import org.apache.camel.test.spring.CamelSpringDelegatingTestContextLoader;
 import org.apache.camel.test.spring.CamelSpringJUnit4ClassRunner;
+import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.context.annotation.Configuration;
@@ -31,6 +32,7 @@ public class ATMLocatorServiceImplTest extends AbstractJUnit4SpringContextTests 
     ATMLocatorService atmLocatorService;
 
     @Test
+    @Ignore
     public void getAtmPerCity() throws Exception {
         ((ATMLocatorServiceImpl) atmLocatorService).setAtmEndpoint("https://www.ing.nl/api/locator/atms/");
         ATMMachine[] result = atmLocatorService.getAtmPerCity("AMSTERDAM");
