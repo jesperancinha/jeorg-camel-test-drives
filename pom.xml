@@ -31,13 +31,13 @@
     </properties>
 
     <dependencies>
-
-        <!-- camel -->
+        <!-- Camel Framwork -->
         <dependency>
             <groupId>org.apache.camel</groupId>
             <artifactId>camel-core</artifactId>
             <version>${camel.version}</version>
         </dependency>
+
         <dependency>
             <groupId>org.apache.camel</groupId>
             <artifactId>camel-spring</artifactId>
@@ -56,7 +56,6 @@
             <version>${camel.version}</version>
         </dependency>
 
-        <!-- swagger api -->
         <dependency>
             <groupId>org.apache.camel</groupId>
             <artifactId>camel-swagger</artifactId>
@@ -64,7 +63,6 @@
 
         </dependency>
 
-        <!-- use for json binding -->
         <dependency>
             <groupId>org.apache.camel</groupId>
             <artifactId>camel-jackson</artifactId>
@@ -84,7 +82,6 @@
             <version>${spring.version}</version>
         </dependency>
 
-        <!-- https://mvnrepository.com/artifact/org.springframework/spring-context -->
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-context</artifactId>
@@ -104,7 +101,7 @@
             <version>${spring.security.version}</version>
         </dependency>
 
-        <!-- logging -->
+        <!-- Logging -->
         <dependency>
             <groupId>log4j</groupId>
             <artifactId>log4j</artifactId>
@@ -115,62 +112,63 @@
             <artifactId>slf4j-log4j12</artifactId>
             <version>${slf4j-log4j12.version}</version>
         </dependency>
-        <dependency>
-            <groupId>ch.qos.logback</groupId>
-            <artifactId>logback-classic</artifactId>
-            <version>${logback-version}</version>
-        </dependency>
-        <dependency>
-            <groupId>ch.qos.logback</groupId>
-            <artifactId>logback-core</artifactId>
-            <version>${logback-version}</version>
-        </dependency>
 
+        <!-- Lombok -->
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
             <version>${lombok.version}</version>
         </dependency>
 
-        <!-- https://mvnrepository.com/artifact/org.mockito/mockito-all -->
+        <!-- Tests -->
+
+        <!-- Mockito -->
         <dependency>
             <groupId>org.mockito</groupId>
             <artifactId>mockito-all</artifactId>
             <version>${mockito-all.version}</version>
             <scope>test</scope>
         </dependency>
+
+        <!-- JUnit -->
         <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
             <version>${junit.version}</version>
             <scope>test</scope>
         </dependency>
-        <!-- https://mvnrepository.com/artifact/org.apache.camel/camel-spring -->
+
+        <!-- Camel Framework for testing -->
         <dependency>
             <groupId>org.apache.camel</groupId>
             <artifactId>camel-test-spring</artifactId>
             <version>${camel-spring.version}</version>
             <scope>test</scope>
         </dependency>
-        <!-- https://mvnrepository.com/artifact/org.apache.camel/camel-spring-javaconfig -->
+
         <dependency>
             <groupId>org.apache.camel</groupId>
             <artifactId>camel-spring-javaconfig</artifactId>
             <version>${camel-spring.version}</version>
             <scope>test</scope>
         </dependency>
-        <!-- https://mvnrepository.com/artifact/org.hamcrest/hamcrest-all -->
+
+        <!-- Hamcrest -->
         <dependency>
             <groupId>org.hamcrest</groupId>
             <artifactId>hamcrest-all</artifactId>
             <version>${hamcrest-all.version}</version>
+            <scope>test</scope>
         </dependency>
+
+        <!-- Servlet API. Needed for Integration tests-->
         <dependency>
             <groupId>servletapi</groupId>
             <artifactId>servlet-api</artifactId>
             <version>2.4</version>
             <scope>test</scope>
         </dependency>
+
     </dependencies>
 
     <build>
@@ -219,7 +217,7 @@
                 </configuration>
             </plugin>
 
-            <!-- Jetty -->
+            <!-- Jetty (here only for other tests) -->
             <plugin>
                 <groupId>org.eclipse.jetty</groupId>
                 <artifactId>jetty-maven-plugin</artifactId>

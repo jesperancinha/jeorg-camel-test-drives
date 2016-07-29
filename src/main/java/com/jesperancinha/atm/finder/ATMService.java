@@ -1,12 +1,10 @@
 package com.jesperancinha.atm.finder;
 
 import com.jesperancinha.atm.finder.service.ATMLocatorService;
-import lombok.NoArgsConstructor;
 import org.apache.camel.BeanInject;
 
 import java.io.IOException;
 
-@NoArgsConstructor
 public class ATMService {
 
     @BeanInject

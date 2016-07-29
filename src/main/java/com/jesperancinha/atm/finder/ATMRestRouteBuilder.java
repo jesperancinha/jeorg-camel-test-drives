@@ -28,7 +28,6 @@ public class ATMRestRouteBuilder extends RouteBuilder {
             .contextPath("jesperancinha-atm-finder/rest").port(8080);
         rest("/provider").description("ATMProvider rest service")
             .consumes("application/json").produces("application/json")
-
             .get("/{city}/atms").description("Find atm by city").outType(ATMProvider.class)
                 .to("bean:providerService?method=getATMProvider(${header.city})");
     }

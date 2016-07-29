@@ -32,7 +32,9 @@ public class ATMLocatorServiceImpl implements ATMLocatorService {
                         String.class);
 
         String body = response.getBody();
-        body = body.substring(body.indexOf('\n') + 1);
+        if(!body.startsWith("{") && !body.startsWith("[")) {
+            body = body.substring(body.indexOf('\n') + 1);
+        }
 
         ATMMachine[] results = mapper.readValue(body, ATMMachine[].class);
 
