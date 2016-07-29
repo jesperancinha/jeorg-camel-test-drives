@@ -25,8 +25,8 @@ import static org.hamcrest.MatcherAssert.assertThat;
  * Created by joaofilipesabinoesperancinha on 28-07-16.
  */
 @RunWith(CamelSpringJUnit4ClassRunner.class)
-@ContextConfiguration(classes = {ATMLocatorServiceImplTest.ContextConfig.class, ATMLocatorServiceImpl.class}, loader = CamelSpringDelegatingTestContextLoader.class)
-public class ATMLocatorServiceImplTest extends AbstractJUnit4SpringContextTests {
+@ContextConfiguration(classes = {ATMLocatorServiceImpIT.ContextConfig.class, ATMLocatorServiceImpl.class}, loader = CamelSpringDelegatingTestContextLoader.class)
+public class ATMLocatorServiceImpIT extends AbstractJUnit4SpringContextTests {
 
     @BeanInject
     ATMLocatorService atmLocatorService;

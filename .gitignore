@@ -4,3 +4,6 @@ target
 # Intellij
 *.iml
 .idea
+
+# JSPM
+jspm_packages
