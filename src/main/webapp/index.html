@@ -1,9 +1,33 @@
 <html>
 <head>
+    <script src="jspm_packages/npm/angular@1.5.8/angular.min.js"></script>
+    <script src="jspm_packages/npm/jquery@2.2.4/dist/jquery.min.js"></script>
+    <script src="jspm_packages/npm/angular-route@1.5.8/angular-route.min.js"></script>
+    <script src="resources/js/atms-dashboard.js"></script>
 
 </head>
+<body ng-app="AtmsApp" ng-controller="AtmsController">
 
-<body>
+<label>Your city:
+    <input type="text" name="input" required ng-trim="true" ng-model="city">
+    <button ng-click="reload(city)">
+        Search
+    </button>
+
+    <table border="1">
+        <tr ng-repeat="atmMachine in atmDashBoard.atmMachines">
+            <td>
+                <p>Street address:<span>{{atmMachine.address.street}}</span></p>
+                <p>House number:<span>{{atmMachine.address.housenumber}}</span></p>
+                <p>Postal code:<span>{{atmMachine.address.postalcode}}</span></p>
+                <p>City:<span>{{atmMachine.address.city}}</span></p>
+                <p>Latitude:<span>{{atmMachine.address.geoLocation.lat}}</span></p>
+                <p>Longitude:<span>{{atmMachine.address.geoLocation.lng}}</span></p>
+                <p>Distance:<span>{{atmMachine.distance}}</span></p>
+                <p>Type:<span>{{atmMachine.type}}</span></p>
+            </td>
+        </tr>
+    </table>
+</label>
 </body>
-
 </html>

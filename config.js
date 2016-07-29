@@ -14,6 +14,7 @@ System.config({
 
   map: {
     "angular": "npm:angular@1.5.8",
+    "angular-route": "npm:angular-route@1.5.8",
     "angularjs": "npm:angularjs@0.0.1",
     "babel": "npm:babel-core@5.8.38",
     "babel-runtime": "npm:babel-runtime@5.8.38",

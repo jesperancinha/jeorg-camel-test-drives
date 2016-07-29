@@ -5,6 +5,7 @@
     },
     "dependencies": {
       "angular": "npm:angular@^1.5.8",
+      "angular-route": "npm:angular-route@^1.5.8",
       "angularjs": "npm:angularjs@^0.0.1",
       "bootstrap": "github:twbs/bootstrap@^3.3.6",
       "jquery": "npm:jquery@^3.1.0"

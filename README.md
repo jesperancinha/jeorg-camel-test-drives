@@ -18,4 +18,10 @@ $ mvn tomcat7:run
 
 * http://localhost:8080/atm/rest/provider/haarlem/atms
 
+## Start your application
+
+After running your tomcat server you should be able to access the application through here:
+
+* http://localhost:8080/atm/login
+
 
