@@ -29,7 +29,7 @@ public class ATMRestRouteBuilder extends RouteBuilder {
         rest("/provider").description("ATMProvider rest service")
             .consumes("application/json").produces("application/json")
 
-            .get("/getATMProvider/{city}/atms").description("Find atm by city").outType(ATMProvider.class)
+            .get("/{city}/atms").description("Find atm by city").outType(ATMProvider.class)
                 .to("bean:providerService?method=getATMProvider(${header.city})");
     }
 
