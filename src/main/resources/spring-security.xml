@@ -20,7 +20,4 @@
             </user-service>
         </authentication-provider>
     </authentication-manager>
-
-    <beans:import resource="classpath:services-config.xml"/>
-    <beans:import resource="classpath:camel-config.xml"/>
 </beans:beans>

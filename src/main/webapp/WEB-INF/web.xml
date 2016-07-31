@@ -5,10 +5,9 @@
 
   <display-name>jesperancinha ATM Finder</display-name>
 
-  <!-- Spring Security config file -->
   <context-param>
     <param-name>contextConfigLocation</param-name>
-    <param-value>/WEB-INF/spring-security.xml
+    <param-value>/WEB-INF/configuration.xml
     </param-value>
   </context-param>
 
