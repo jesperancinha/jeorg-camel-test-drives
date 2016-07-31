@@ -7,9 +7,6 @@
          http://camel.apache.org/schema/spring
          http://camel.apache.org/schema/spring/camel-spring.xsd">
 
-    <bean id="metricsRoutePolicyFactory"
-          class="org.apache.camel.component.metrics.routepolicy.MetricsRoutePolicyFactory"/>
-
     <camelContext id="providerCamelContext" xmlns="http://camel.apache.org/schema/spring" trace="true">
         <routeBuilder ref="restRoutes"/>
     </camelContext>
