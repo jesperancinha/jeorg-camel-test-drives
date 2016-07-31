@@ -7,8 +7,7 @@
 
   <context-param>
     <param-name>contextConfigLocation</param-name>
-    <param-value>/WEB-INF/configuration.xml
-    </param-value>
+    <param-value>/WEB-INF/configuration.xml</param-value>
   </context-param>
 
   <listener>
@@ -20,28 +19,6 @@
     <servlet-name>CamelServlet</servlet-name>
     <servlet-class>org.apache.camel.component.servlet.CamelHttpTransportServlet</servlet-class>
     <load-on-startup>1</load-on-startup>
-  </servlet>
-
-  <servlet>
-    <servlet-name>ApiDeclarationServlet</servlet-name>
-    <servlet-class>org.apache.camel.component.swagger.DefaultCamelSwaggerServlet</servlet-class>
-    <init-param>
-      <param-name>api.path</param-name>
-      <param-value>api-docs</param-value>
-    </init-param>
-    <init-param>
-      <param-name>api.version</param-name>
-      <param-value>1.0.0</param-value>
-    </init-param>
-    <init-param>
-      <param-name>api.title</param-name>
-      <param-value>ATM Services</param-value>
-    </init-param>
-    <init-param>
-      <param-name>api.description</param-name>
-      <param-value>ATM Api to find ATMS</param-value>
-    </init-param>
-    <load-on-startup>2</load-on-startup>
   </servlet>
 
   <!-- Camel -->
