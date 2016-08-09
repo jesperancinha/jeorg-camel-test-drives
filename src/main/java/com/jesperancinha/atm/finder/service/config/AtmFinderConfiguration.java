@@ -3,7 +3,6 @@ package com.jesperancinha.atm.finder.service.config;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.jesperancinha.atm.finder.camel.AtmService;
 import com.jesperancinha.atm.finder.service.AtmLocatorService;
-import org.apache.camel.impl.SimpleRegistry;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
@@ -23,12 +22,6 @@ import org.springframework.web.context.support.StandardServletEnvironment;
 @PropertySource(value = "classpath:/application.properties")
 public class AtmFinderConfiguration {
 
-    static final RestTemplate restTemplate = new RestTemplate();
-
-    static final ObjectMapper objectMapper = new ObjectMapper();
-
-    static final SimpleRegistry registry = new SimpleRegistry();
-
     @Autowired
     AtmLocatorService atmLocatorService;
 
@@ -37,12 +30,12 @@ public class AtmFinderConfiguration {
 
     @Bean
     RestTemplate restTemplate() {
-        return restTemplate;
+        return new RestTemplate();
     }
 
     @Bean
     ObjectMapper objectMapper() {
-        return objectMapper;
+        return new ObjectMapper();
     }
 
     @Bean
@@ -52,8 +45,4 @@ public class AtmFinderConfiguration {
         return propertySourcesPlaceholderConfigurer;
     }
 
-    public AtmFinderConfiguration(){
-        registry.put("restTemplate", restTemplate);
-        registry.put("objectMapper", objectMapper);
-    }
 }
