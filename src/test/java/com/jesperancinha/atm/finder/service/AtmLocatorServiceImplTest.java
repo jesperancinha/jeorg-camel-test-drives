@@ -29,7 +29,7 @@ import static org.mockito.Mockito.when;
  * Created by joaofilipesabinoesperancinha on 29-07-16.
  */
 @RunWith(MockitoJUnitRunner.class)
-public class ATMLocatorServiceImplTest {
+public class AtmLocatorServiceImplTest {
 
     private static final String MAPPER = "mapper";
     private static final String MOCK_CLEAN_RESPONSE1_JSON = "/mockCleanResponse1.json";
@@ -37,7 +37,7 @@ public class ATMLocatorServiceImplTest {
     private static final String MOCK_GARBAGE_RESPONSE1_JSON = "/mockGarbageResponse1.json";
 
     @InjectMocks
-    ATMLocatorServiceImpl atmLocatorService;
+    AtmLocatorServiceImpl atmLocatorService;
 
     @Mock
     RestTemplate restTemplate;

@@ -4,7 +4,9 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.jesperancinha.atm.finder.service.payload.response.ATMMachine;
 import lombok.Setter;
 import org.apache.camel.BeanInject;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.ResponseEntity;
+import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
 import java.io.IOException;
@@ -15,7 +17,8 @@ import java.util.Arrays;
  */
 
 @Setter
-public class ATMLocatorServiceImpl implements ATMLocatorService {
+@Service(value = "atmLocatorService")
+public class AtmLocatorServiceImpl implements AtmLocatorService {
 
     @BeanInject
     private RestTemplate restTemplate;
@@ -23,6 +26,7 @@ public class ATMLocatorServiceImpl implements ATMLocatorService {
     @BeanInject
     private ObjectMapper mapper;
 
+    @Value("${atm.endpoint}")
     private String atmEndpoint;
 
     public ATMMachine[] getAtmPerCity(String city) throws IOException {

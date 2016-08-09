@@ -14,7 +14,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.jesperancinha.atm.finder;
+package com.jesperancinha.atm.finder.camel;
 
 import com.jesperancinha.atm.finder.service.payload.response.ATMMachine;
 import lombok.Builder;
@@ -24,7 +24,7 @@ import lombok.Setter;
 @Getter
 @Setter
 @Builder
-public class ATMProvider {
+public class AtmProvider {
 
     private String city;
 

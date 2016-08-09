@@ -1,9 +1,7 @@
-package com.jesperancinha.atm.finder;
+package com.jesperancinha.atm.finder.camel;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
-import com.jesperancinha.atm.finder.service.ATMLocatorService;
-import com.jesperancinha.atm.finder.service.ATMLocatorServiceImpIT;
-import com.jesperancinha.atm.finder.service.ATMLocatorServiceImpl;
+import com.jesperancinha.atm.finder.service.AtmLocatorService;
+import com.jesperancinha.atm.finder.service.config.AtmFinderConfiguration;
 import org.apache.camel.BeanInject;
 import org.apache.camel.builder.RouteBuilder;
 import org.apache.camel.language.Bean;
@@ -14,8 +12,8 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.test.context.ContextConfiguration;
+import org.springframework.test.context.junit4.AbstractJUnit4SpringContextTests;
 import org.springframework.test.util.ReflectionTestUtils;
-import org.springframework.web.client.RestTemplate;
 
 import java.util.Arrays;
 
@@ -28,14 +26,11 @@ import static org.hamcrest.MatcherAssert.assertThat;
  */
 @RunWith(CamelSpringJUnit4ClassRunner.class)
 @ContextConfiguration(classes = {
-        ATMLocatorServiceImpIT.ContextConfig.class,
-        ATMService.class,
-        ATMLocatorServiceImpl.class,
-        RestTemplate.class,
-        ObjectMapper.class
+        AtmFinderConfiguration.class,
+        AtmServiceIT.ContextConfig.class
 },
         loader = CamelSpringDelegatingTestContextLoader.class)
-public class ATMServiceIT {
+public class AtmServiceIT extends AbstractJUnit4SpringContextTests {
 
     private static final String HTTPS_WWW_ING_NL_API_LOCATOR_ATMS = "https://www.ing.nl/api/locator/atms/";
     private static final String ATM_ENDPOINT = "atmEndpoint";
@@ -44,16 +39,19 @@ public class ATMServiceIT {
     private static final String ATM_LOCATOR_SERVICE = "atmLocatorService";
 
     @BeanInject
-    ATMService atmService;
+    AtmService atmService;
+
+    @BeanInject
+    AtmLocatorService atmLocatorService;
 
     @Test
     public void getATMProvider_Uppercase() throws Exception {
-        ATMLocatorService atmLocatorService = (ATMLocatorService) ReflectionTestUtils.getField(
+        AtmLocatorService atmLocatorService = (AtmLocatorService) ReflectionTestUtils.getField(
                 atmService,
                 ATM_LOCATOR_SERVICE
         );
         ReflectionTestUtils.setField(atmLocatorService, ATM_ENDPOINT, HTTPS_WWW_ING_NL_API_LOCATOR_ATMS);
-        ATMProvider result = atmService.getATMProvider(AMSTERDAM_UPPERCASE);
+        AtmProvider result = atmService.getATMProvider(AMSTERDAM_UPPERCASE);
 
         assertEquals(122, result.getAtmMachines().length);
         Arrays.stream(result.getAtmMachines())
@@ -62,12 +60,12 @@ public class ATMServiceIT {
 
     @Test
     public void getATMProvider_Lowercase() throws Exception {
-        ATMLocatorService atmLocatorService = (ATMLocatorService) ReflectionTestUtils.getField(
+        AtmLocatorService atmLocatorService = (AtmLocatorService) ReflectionTestUtils.getField(
                 atmService,
                 ATM_LOCATOR_SERVICE
         );
         ReflectionTestUtils.setField(atmLocatorService, ATM_ENDPOINT, HTTPS_WWW_ING_NL_API_LOCATOR_ATMS);
-        ATMProvider result = atmService.getATMProvider(AMSTERDAM_LOWERCASE);
+        AtmProvider result = atmService.getATMProvider(AMSTERDAM_LOWERCASE);
 
         assertEquals(122, result.getAtmMachines().length);
         Arrays.stream(result.getAtmMachines())
@@ -80,7 +78,7 @@ public class ATMServiceIT {
         @Bean(ref = "")
         @Override
         public RouteBuilder route() {
-            return new ATMRestRouteBuilder();
+            return new AtmRestRouteBuilder();
         }
     }
 }

@@ -14,22 +14,24 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.jesperancinha.atm.finder;
+package com.jesperancinha.atm.finder.camel;
 
-import org.apache.camel.builder.RouteBuilder;
 import org.apache.camel.model.rest.RestBindingMode;
+import org.apache.camel.spring.SpringRouteBuilder;
+import org.springframework.stereotype.Component;
 
-public class ATMRestRouteBuilder extends RouteBuilder {
+@Component
+public class AtmRestRouteBuilder extends SpringRouteBuilder {
 
     @Override
     public void configure() throws Exception {
         restConfiguration().component("servlet").bindingMode(RestBindingMode.json)
             .dataFormatProperty("prettyPrint", "true")
             .contextPath("jesperancinha-atm-finder/rest").port(8080);
-        rest("/provider").description("ATMProvider rest service")
+        rest("/provider").description("AtmProvider rest service")
             .consumes("application/json").produces("application/json")
-            .get("/{city}/atms").description("Find atm by city").outType(ATMProvider.class)
-                .to("bean:providerService?method=getATMProvider(${header.city})");
+            .get("/{city}/atms").description("Find atm by city").outType(AtmProvider.class)
+                .to("bean:atmService?method=getATMProvider(${header.city})");
     }
 
 }
