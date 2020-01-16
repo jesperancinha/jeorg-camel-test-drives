@@ -1,4 +1,5 @@
 # jesperancinha-atm-finder
+![Bitbucket Pipelines branch](https://img.shields.io/bitbucket/pipelines/jesperancinha/atm-finder/master)
 
 ## How to build and run
 
