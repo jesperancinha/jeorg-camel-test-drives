@@ -1,14 +1,8 @@
-# camel-test-drives
+# jeorg-camel-app-atm
 
+## Introduction
 
-## Commands
-
-```bash
-git fetch <origin>
-git merge <origin>/master --allow-unrelated-histories
-```
-# jesperancinha-atm-finder
-![Bitbucket Pipelines branch](https://img.shields.io/bitbucket/pipelines/jesperancinha/atm-finder/master)
+This example uses the [Open ATM Machine finder endpoint](https://www.ing.nl/api/locator/atms/) provided by ING.
 
 ## How to build and run
 
@@ -56,6 +50,11 @@ After running your tomcat server you should be able to access the application th
 * JSPM
 
 * Tomcat 7
+
+## References
+
+-   [https://www.ing.nl/api/locator/atms/](https://www.ing.nl/api/locator/atms/)
+-   [ING Developer Portal](https://developer.ing.com/openbanking/home)
 
 ## About me 👨🏽‍💻🚀🏳️‍🌈
 
