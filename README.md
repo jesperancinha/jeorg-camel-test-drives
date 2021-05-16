@@ -1,5 +1,12 @@
 # camel-test-drives
 
+
+## Commands
+
+```bash
+git fetch <origin>
+git merge <origin>/master --allow-unrelated-histories
+```
 ## About me 👨🏽‍💻🚀🏳️‍🌈
 
 [![alt text](https://raw.githubusercontent.com/jesperancinha/project-signer/master/project-signer-templates/icons-20/JEOrgLogo-20.png "João Esperancinha Homepage")](http://joaofilipesabinoesperancinha.nl)
