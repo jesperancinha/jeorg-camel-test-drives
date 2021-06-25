@@ -6,7 +6,6 @@
 [![GitHub License](https://img.shields.io/badge/license-Apache%20License%202.0-blue.svg?style=flat)](https://www.apache.org/licenses/LICENSE-2.0)
 
 [![CircleCI](https://circleci.com/gh/jesperancinha/jeorg-camel-test-drives.svg?style=svg)](https://circleci.com/gh/jesperancinha/jeorg-camel-test-drives)
-[![Build Status](https://travis-ci.com/jesperancinha/jeorg-camel-test-drives.svg?branch=master)](https://travis-ci.com/jesperancinha/jeorg-camel-test-drives)
 [![Build status](https://ci.appveyor.com/api/projects/status/r3tda8b33nl0k9dj?svg=true)](https://ci.appveyor.com/project/jesperancinha/jeorg-camel-test-drives)
 [![camel-test-drives](https://github.com/jesperancinha/jeorg-camel-test-drives/actions/workflows/camel-test-drives.yml/badge.svg)](https://github.com/jesperancinha/jeorg-camel-test-drives/actions/workflows/camel-test-drives.yml)
 
