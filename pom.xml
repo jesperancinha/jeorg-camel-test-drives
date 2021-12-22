@@ -31,7 +31,7 @@
         <camel-spring.version>2.17.2</camel-spring.version>
         <maven.compiler.plugin>2.3.2</maven.compiler.plugin>
         <hamcrest-all.version>1.3</hamcrest-all.version>
-        <guava.version>19.0</guava.version>
+        <guava.version>23.0</guava.version>
         <lombok.version>1.18.22</lombok.version>
         <servlet-api.version>2.4</servlet-api.version>
         <jacoco-maven-plugin.version>0.8.7</jacoco-maven-plugin.version>
