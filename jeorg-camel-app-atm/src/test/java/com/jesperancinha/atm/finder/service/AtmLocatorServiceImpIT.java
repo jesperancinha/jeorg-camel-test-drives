@@ -5,7 +5,7 @@ import com.jesperancinha.atm.finder.service.config.AtmFinderConfiguration;
 import com.jesperancinha.atm.finder.service.payload.response.ATMMachine;
 import org.apache.camel.BeanInject;
 import org.apache.camel.builder.RouteBuilder;
-import org.apache.camel.language.Bean;
+import org.apache.camel.language.bean.Bean;
 import org.apache.camel.spring.javaconfig.SingleRouteCamelConfiguration;
 import org.apache.camel.test.spring.CamelSpringDelegatingTestContextLoader;
 import org.apache.camel.test.spring.CamelSpringJUnit4ClassRunner;
