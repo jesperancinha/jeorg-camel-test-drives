@@ -11,7 +11,6 @@
 
 [![Codacy Badge](https://app.codacy.com/project/badge/Grade/5535eca15bac415b88fa09eae34de4ac)](https://www.codacy.com/gh/jesperancinha/jeorg-camel-test-drives/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=jesperancinha/jeorg-camel-test-drives&amp;utm_campaign=Badge_Grade)
 [![codebeat badge](https://codebeat.co/badges/7c2a2dbb-6e59-46f1-aba1-fde393908c71)](https://codebeat.co/projects/github-com-jesperancinha-jeorg-camel-test-drives-master)
-[![BCH compliance](https://bettercodehub.com/edge/badge/jesperancinha/jeorg-camel-test-drives?branch=master)](https://bettercodehub.com/results/jesperancinha/jeorg-camel-test-drives)
 [![Known Vulnerabilities](https://snyk.io/test/github/jesperancinha/jeorg-camel-test-drives/badge.svg)](https://snyk.io/test/github/jesperancinha/jeorg-camel-test-drives)
 
 [![Codacy Badge](https://app.codacy.com/project/badge/Coverage/5535eca15bac415b88fa09eae34de4ac)](https://www.codacy.com/gh/jesperancinha/jeorg-camel-test-drives/dashboard?utm_source=github.com&utm_medium=referral&utm_content=jesperancinha/jeorg-camel-test-drives&utm_campaign=Badge_Coverage)
