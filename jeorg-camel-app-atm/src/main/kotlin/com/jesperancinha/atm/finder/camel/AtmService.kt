@@ -9,10 +9,11 @@ import java.util.*
 @Component
 class AtmService {
     @BeanInject
-    private val atmLocatorService: AtmLocatorServiceImpl? = null
+    lateinit var atmLocatorService: AtmLocatorServiceImpl
     @Throws(IOException::class)
     fun getATMProvider(city: String): AtmProvider {
-        return AtmProvider.builder().atmMachines(atmLocatorService!!.getAtmPerCity(city.uppercase(Locale.getDefault())))
-            .city(city).build()
+        return AtmProvider(
+            atmMachines=atmLocatorService.getAtmPerCity(city.uppercase(Locale.getDefault())),
+            city = city)
     }
 }
