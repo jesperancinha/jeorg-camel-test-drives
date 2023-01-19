@@ -38,7 +38,7 @@ public class AtmLocatorServiceImpIT extends AbstractJUnit4SpringContextTests {
     private static final String AMSTERDAM = "AMSTERDAM";
 
     @BeanInject
-    AtmLocatorService atmLocatorService;
+    AtmLocatorServiceImpl atmLocatorService;
 
     @Test
     public void getAtmPerCity() throws Exception {

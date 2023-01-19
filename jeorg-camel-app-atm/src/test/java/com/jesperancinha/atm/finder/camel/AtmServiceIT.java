@@ -1,6 +1,6 @@
 package com.jesperancinha.atm.finder.camel;
 
-import com.jesperancinha.atm.finder.service.AtmLocatorService;
+import com.jesperancinha.atm.finder.service.AtmLocatorServiceImpl;
 import com.jesperancinha.atm.finder.service.config.AtmFinderConfiguration;
 import org.apache.camel.BeanInject;
 import org.apache.camel.builder.RouteBuilder;
@@ -42,11 +42,11 @@ public class AtmServiceIT extends AbstractJUnit4SpringContextTests {
     AtmService atmService;
 
     @BeanInject
-    AtmLocatorService atmLocatorService;
+    AtmLocatorServiceImpl atmLocatorService;
 
     @Test
     public void getATMProvider_Uppercase() throws Exception {
-        AtmLocatorService atmLocatorService = (AtmLocatorService) ReflectionTestUtils.getField(
+        AtmLocatorServiceImpl atmLocatorService = (AtmLocatorServiceImpl) ReflectionTestUtils.getField(
                 atmService,
                 ATM_LOCATOR_SERVICE
         );
@@ -60,7 +60,7 @@ public class AtmServiceIT extends AbstractJUnit4SpringContextTests {
 
     @Test
     public void getATMProvider_Lowercase() throws Exception {
-        AtmLocatorService atmLocatorService = (AtmLocatorService) ReflectionTestUtils.getField(
+        AtmLocatorServiceImpl atmLocatorService = (AtmLocatorServiceImpl) ReflectionTestUtils.getField(
                 atmService,
                 ATM_LOCATOR_SERVICE
         );

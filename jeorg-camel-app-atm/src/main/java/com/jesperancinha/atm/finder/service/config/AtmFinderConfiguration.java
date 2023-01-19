@@ -2,7 +2,7 @@ package com.jesperancinha.atm.finder.service.config;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.jesperancinha.atm.finder.camel.AtmService;
-import com.jesperancinha.atm.finder.service.AtmLocatorService;
+import com.jesperancinha.atm.finder.service.AtmLocatorServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
@@ -23,7 +23,7 @@ import org.springframework.web.context.support.StandardServletEnvironment;
 public class AtmFinderConfiguration {
 
     @Autowired
-    AtmLocatorService atmLocatorService;
+    AtmLocatorServiceImpl atmLocatorService;
 
     @Autowired
     AtmService atmService;
