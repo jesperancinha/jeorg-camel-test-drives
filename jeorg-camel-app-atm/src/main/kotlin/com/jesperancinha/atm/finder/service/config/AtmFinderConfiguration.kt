@@ -23,7 +23,7 @@ class AtmFinderConfiguration {
     var atmLocatorService: AtmLocatorServiceImpl? = null
 
     @Autowired
-    var atmService: AtmService? = null
+    lateinit var atmService: AtmService
     @Bean
     fun restTemplate(): RestTemplate {
         return RestTemplate()

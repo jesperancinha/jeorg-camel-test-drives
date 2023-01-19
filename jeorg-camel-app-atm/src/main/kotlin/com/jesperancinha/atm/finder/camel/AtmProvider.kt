@@ -19,14 +19,26 @@
 package com.jesperancinha.atm.finder.camel
 
 import com.jesperancinha.atm.finder.service.payload.response.ATMMachine
-import lombok.Builder
-import lombok.Getter
-import lombok.Setter
 
-@Getter
-@Setter
-@Builder
-class AtmProvider {
-    private val city: String? = null
+data class AtmProvider(
+    private val city: String,
     private val atmMachines: Array<ATMMachine>
+) {
+    override fun equals(other: Any?): Boolean {
+        if (this === other) return true
+        if (javaClass != other?.javaClass) return false
+
+        other as AtmProvider
+
+        if (city != other.city) return false
+        if (!atmMachines.contentEquals(other.atmMachines)) return false
+
+        return true
+    }
+
+    override fun hashCode(): Int {
+        var result = city.hashCode()
+        result = 31 * result + atmMachines.contentHashCode()
+        return result
+    }
 }
