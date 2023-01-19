@@ -18,7 +18,7 @@ import java.util.Arrays;
 
 @Setter
 @Service(value = "atmLocatorService")
-public class AtmLocatorServiceImpl implements AtmLocatorService {
+public class AtmLocatorServiceImpl {
 
     @BeanInject
     private RestTemplate restTemplate;
