@@ -18,6 +18,9 @@
         <jdk.version>${java.version}</jdk.version>
         <maven.compiler.source>${java.version}</maven.compiler.source>
         <maven.compiler.target>${java.version}</maven.compiler.target>
+        <maven-resources-plugin.version>3.3.0</maven-resources-plugin.version>
+        <maven-war-plugin.version>3.3.2</maven-war-plugin.version>
+        <maven-jar-plugin.version>3.3.0</maven-jar-plugin.version>
         <kotlin.version>1.8.0</kotlin.version>
 
         <swagger-ui.version>2.0.24</swagger-ui.version>
@@ -40,10 +43,21 @@
         <coveralls-maven-plugin.version>4.3.0</coveralls-maven-plugin.version>
         <jaxb-api.version>2.3.1</jaxb-api.version>
         <omni-coveragereporter-maven-plugin.version>0.3.2</omni-coveragereporter-maven-plugin.version>
+        <spring-boot-parent.version>3.0.1</spring-boot-parent.version>
+        <kotest-assertions-core-jvm.version>5.5.4</kotest-assertions-core-jvm.version>
+        <mockk-jvm.version>1.13.2</mockk-jvm.version>
     </properties>
 
     <dependencyManagement>
         <dependencies>
+            <!-- Spring Framework -->
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-parent</artifactId>
+                <version>${spring-boot-parent.version}</version>
+                <scope>import</scope>
+                <type>pom</type>
+            </dependency>
             <!-- Camel Framework -->
             <dependency>
                 <groupId>org.apache.camel</groupId>
@@ -73,25 +87,6 @@
                 <groupId>org.apache.camel</groupId>
                 <artifactId>camel-jackson</artifactId>
                 <version>${camel.version}</version>
-            </dependency>
-
-            <!-- Spring  -->
-            <dependency>
-                <groupId>org.springframework</groupId>
-                <artifactId>spring-web</artifactId>
-                <version>${spring.version}</version>
-            </dependency>
-
-            <dependency>
-                <groupId>org.springframework</groupId>
-                <artifactId>spring-webmvc</artifactId>
-                <version>${spring.version}</version>
-            </dependency>
-
-            <dependency>
-                <groupId>org.springframework</groupId>
-                <artifactId>spring-context</artifactId>
-                <version>${spring.version}</version>
             </dependency>
 
             <!-- Spring Security -->
@@ -185,6 +180,20 @@
                 <groupId>servletapi</groupId>
                 <artifactId>servlet-api</artifactId>
                 <version>${servlet-api.version}</version>
+                <scope>test</scope>
+            </dependency>
+
+            <dependency>
+                <groupId>io.kotest</groupId>
+                <artifactId>kotest-assertions-core-jvm</artifactId>
+                <version>${kotest-assertions-core-jvm.version}</version>
+                <scope>test</scope>
+            </dependency>
+
+            <dependency>
+                <groupId>io.mockk</groupId>
+                <artifactId>mockk-jvm</artifactId>
+                <version>${mockk-jvm.version}</version>
                 <scope>test</scope>
             </dependency>
 

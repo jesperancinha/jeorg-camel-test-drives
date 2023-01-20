@@ -1,8 +1,8 @@
-package com.jesperancinha.atm.finder.service.config
+package org.jesperancinha.atm.finder.service.config
 
 import com.fasterxml.jackson.databind.ObjectMapper
-import com.jesperancinha.atm.finder.camel.AtmService
-import com.jesperancinha.atm.finder.service.AtmLocatorServiceImpl
+import org.jesperancinha.atm.finder.camel.AtmService
+import org.jesperancinha.atm.finder.service.AtmLocatorServiceImpl
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.context.annotation.Bean
 import org.springframework.context.annotation.ComponentScan
@@ -16,7 +16,7 @@ import org.springframework.web.context.support.StandardServletEnvironment
  * Created by joaofilipesabinoesperancinha on 09-08-16.
  */
 @Configuration
-@ComponentScan(basePackages = ["com.jesperancinha.atm.finder.service"])
+@ComponentScan(basePackages = ["org.jesperancinha.atm.finder.service"])
 @PropertySource(value = ["classpath:/application.properties"])
 class AtmFinderConfiguration {
     @Autowired

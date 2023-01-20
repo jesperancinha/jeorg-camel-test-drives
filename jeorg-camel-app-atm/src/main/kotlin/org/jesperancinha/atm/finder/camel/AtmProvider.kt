@@ -16,13 +16,13 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.jesperancinha.atm.finder.camel
+package org.jesperancinha.atm.finder.camel
 
-import com.jesperancinha.atm.finder.service.payload.response.ATMMachine
+import org.jesperancinha.atm.finder.service.payload.response.ATMMachine
 
 data class AtmProvider(
-    private val city: String,
-    private val atmMachines: Array<ATMMachine>
+    val city: String,
+    val atmMachines: Array<ATMMachine>
 ) {
     override fun equals(other: Any?): Boolean {
         if (this === other) return true

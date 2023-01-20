@@ -1,29 +1,26 @@
-package com.jesperancinha.atm.finder.service.payload.response
+package org.jesperancinha.atm.finder.service.payload.response
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties
 import com.fasterxml.jackson.annotation.JsonProperty
-import lombok.Getter
-import lombok.Setter
 
 /**
  * Created by joaofilipesabinoesperancinha on 28-07-16.
  */
-@Getter
-@Setter
+
 @JsonIgnoreProperties(ignoreUnknown = true)
-class ATMAddress {
+class ATMAddress(
     @JsonProperty("street")
-    private val street: String? = null
+    val street: String,
 
     @JsonProperty("housenumber")
-    private val housenumber: String? = null
+    val housenumber: String,
 
     @JsonProperty("postalcode")
-    private val postalcode: String? = null
+    val postalcode: String,
 
     @JsonProperty("city")
-    private val city: String? = null
+    val city: String,
 
     @JsonProperty("geoLocation")
-    private val geoLocation: ATMGeoLocation? = null
-}
+    val geoLocation: ATMGeoLocation
+)
