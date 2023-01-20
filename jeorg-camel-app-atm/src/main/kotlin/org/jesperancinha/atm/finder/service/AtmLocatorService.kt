@@ -1,7 +1,6 @@
 package org.jesperancinha.atm.finder.service
 
 import com.fasterxml.jackson.databind.ObjectMapper
-import lombok.Setter
 import org.apache.camel.BeanInject
 import org.jesperancinha.atm.finder.service.payload.response.ATMMachine
 import org.springframework.beans.factory.annotation.Value
@@ -13,9 +12,8 @@ import java.util.*
 /**
  * Created by joaofilipesabinoesperancinha on 28-07-16.
  */
-@Setter
-@Service(value = "atmLocatorService")
-class AtmLocatorServiceImpl {
+@Service
+class AtmLocatorService {
     @BeanInject
     lateinit var restTemplate: RestTemplate
 

@@ -3,20 +3,20 @@ package com.jesperancinha.atm.finder.service
 import com.jesperancinha.atm.finder.camel.AtmServiceIT
 import io.kotest.matchers.shouldBe
 import org.apache.camel.BeanInject
+import org.apache.camel.RoutesBuilder
 import org.apache.camel.builder.RouteBuilder
 import org.apache.camel.language.bean.Bean
-import org.apache.camel.spring.javaconfig.SingleRouteCamelConfiguration
 import org.apache.camel.test.spring.junit5.CamelSpringBootTest
-import org.jesperancinha.atm.finder.camel.AtmRestRouteBuilder
-import org.jesperancinha.atm.finder.service.AtmLocatorServiceImpl
+import org.jesperancinha.atm.finder.service.AtmLocatorService
 import org.jesperancinha.atm.finder.service.config.AtmFinderConfiguration
 import org.jesperancinha.atm.finder.service.payload.response.ATMMachine
-import org.junit.Test
+import org.junit.jupiter.api.Test
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration
 import org.springframework.context.annotation.Configuration
 import org.springframework.test.context.ContextConfiguration
 import org.springframework.test.util.ReflectionTestUtils
 import java.util.*
+
 
 /**
  * Created by joaofilipesabinoesperancinha on 28-07-16.
@@ -24,10 +24,10 @@ import java.util.*
 @CamelSpringBootTest
 @EnableAutoConfiguration
 @ContextConfiguration(
-    classes = [AtmFinderConfiguration::class, AtmServiceIT.ContextConfig::class]
+    classes = [AtmFinderConfiguration::class, AtmLocatorServiceImpIT.ContextConfig::class]
 )
 class AtmLocatorServiceImpIT @BeanInject constructor(
-    private val atmLocatorService: AtmLocatorServiceImpl
+    private val atmLocatorService: AtmLocatorService
 ) {
 
 
@@ -44,10 +44,15 @@ class AtmLocatorServiceImpIT @BeanInject constructor(
     }
 
     @Configuration
-    class ContextConfig : SingleRouteCamelConfiguration() {
-        @Bean(ref = "")
-        override fun route(): RouteBuilder {
-            return AtmRestRouteBuilder()
+    internal class ContextConfig {
+        @Bean(ref="ref")
+        fun route(): RoutesBuilder {
+            return object : RouteBuilder() {
+                @Throws(java.lang.Exception::class)
+                override fun configure() {
+                    from("direct:test").to("mock:test")
+                }
+            }
         }
     }
 
