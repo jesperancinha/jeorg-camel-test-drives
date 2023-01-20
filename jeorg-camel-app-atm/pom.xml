@@ -8,9 +8,9 @@
         <version>1.0.0</version>
     </parent>
     <properties>
-        <maven-resources-plugin.version>3.3.0</maven-resources-plugin.version>
-        <maven-war-plugin.version>3.3.2</maven-war-plugin.version>
+        <camel-test.version>3.20.1</camel-test.version>
     </properties>
+
     <modelVersion>4.0.0</modelVersion>
 
     <artifactId>jeorg-camel-app-atm</artifactId>
@@ -47,18 +47,12 @@
 
         <!-- Spring  -->
         <dependency>
-            <groupId>org.springframework</groupId>
-            <artifactId>spring-web</artifactId>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter</artifactId>
         </dependency>
-
         <dependency>
-            <groupId>org.springframework</groupId>
-            <artifactId>spring-webmvc</artifactId>
-        </dependency>
-
-        <dependency>
-            <groupId>org.springframework</groupId>
-            <artifactId>spring-context</artifactId>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-autoconfigure</artifactId>
         </dependency>
 
         <!-- Spring Security -->
@@ -70,6 +64,11 @@
         <dependency>
             <groupId>org.springframework.security</groupId>
             <artifactId>spring-security-config</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-test</artifactId>
         </dependency>
 
         <!-- Logging -->
@@ -109,12 +108,20 @@
             <scope>test</scope>
         </dependency>
 
-        <!-- JUnit -->
+        <!-- https://mvnrepository.com/artifact/org.apache.camel/camel-test-junit5 -->
         <dependency>
-            <groupId>junit</groupId>
-            <artifactId>junit</artifactId>
-            <scope>test</scope>
+            <groupId>org.apache.camel</groupId>
+            <artifactId>camel-test-junit5</artifactId>
+            <version>${camel-test.version}</version>
         </dependency>
+        <!-- https://mvnrepository.com/artifact/org.apache.camel/camel-test-spring-junit5 -->
+        <dependency>
+            <groupId>org.apache.camel</groupId>
+            <artifactId>camel-test-spring-junit5</artifactId>
+            <version>${camel-test.version}</version>
+        </dependency>
+
+
 
         <!-- Camel Framework for testing -->
         <dependency>
@@ -129,13 +136,6 @@
             <scope>test</scope>
         </dependency>
 
-        <!-- Hamcrest -->
-        <dependency>
-            <groupId>org.hamcrest</groupId>
-            <artifactId>hamcrest-all</artifactId>
-            <scope>test</scope>
-        </dependency>
-
         <!-- Servlet API. Needed for Integration tests-->
         <dependency>
             <groupId>servletapi</groupId>
@@ -143,6 +143,17 @@
             <scope>test</scope>
         </dependency>
 
+        <dependency>
+            <groupId>io.kotest</groupId>
+            <artifactId>kotest-assertions-core-jvm</artifactId>
+            <scope>test</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>io.mockk</groupId>
+            <artifactId>mockk-jvm</artifactId>
+            <scope>test</scope>
+        </dependency>
     </dependencies>
 
     <build>
@@ -150,6 +161,18 @@
         <sourceDirectory>${project.basedir}/src/main/kotlin</sourceDirectory>
         <testSourceDirectory>${project.basedir}/src/test/kotlin</testSourceDirectory>
         <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-jar-plugin</artifactId>
+                <version>${maven-jar-plugin.version}</version>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>test-jar</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
             <plugin>
                 <groupId>org.jetbrains.kotlin</groupId>
                 <artifactId>kotlin-maven-plugin</artifactId>

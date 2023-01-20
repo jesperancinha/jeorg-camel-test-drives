@@ -1,9 +1,9 @@
-package com.jesperancinha.atm.finder.service
+package org.jesperancinha.atm.finder.service
 
 import com.fasterxml.jackson.databind.ObjectMapper
-import com.jesperancinha.atm.finder.service.payload.response.ATMMachine
 import lombok.Setter
 import org.apache.camel.BeanInject
+import org.jesperancinha.atm.finder.service.payload.response.ATMMachine
 import org.springframework.beans.factory.annotation.Value
 import org.springframework.stereotype.Service
 import org.springframework.web.client.RestTemplate
@@ -17,28 +17,27 @@ import java.util.*
 @Service(value = "atmLocatorService")
 class AtmLocatorServiceImpl {
     @BeanInject
-    private val restTemplate: RestTemplate? = null
+    lateinit var restTemplate: RestTemplate
 
     @BeanInject
-    private val mapper: ObjectMapper? = null
+    lateinit var  mapper: ObjectMapper
 
     @Value("\${atm.endpoint}")
-    private val atmEndpoint: String? = null
+    lateinit var  atmEndpoint: String
+
     @Throws(IOException::class)
     fun getAtmPerCity(city: String): Array<ATMMachine> {
-        val response = restTemplate
-            .getForEntity(
-                atmEndpoint,
-                String::class.java
-            )
-        var body = response.body
+        val response = restTemplate.getForEntity(
+            atmEndpoint,
+            String::class.java
+        )
+        var body = requireNotNull(response.body)
         if (!body.startsWith("{") && !body.startsWith("[")) {
             body = body.substring(body.indexOf('\n') + 1)
         }
-        val results = mapper!!.readValue(body, Array<ATMMachine>::class.java)
-        return Arrays
-            .stream(results)
+        val results = mapper.readValue(body, Array<ATMMachine>::class.java)
+        return results
             .filter { atmMachine: ATMMachine -> atmMachine.address.city == city }
-            .toArray { _Dummy_.__Array__() }
+            .toTypedArray()
     }
 }

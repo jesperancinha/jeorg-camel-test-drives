@@ -1,6 +1,6 @@
-package com.jesperancinha.atm.finder.camel
+package org.jesperancinha.atm.finder.camel
 
-import com.jesperancinha.atm.finder.service.AtmLocatorServiceImpl
+import org.jesperancinha.atm.finder.service.AtmLocatorServiceImpl
 import org.apache.camel.BeanInject
 import org.springframework.stereotype.Component
 import java.io.IOException
