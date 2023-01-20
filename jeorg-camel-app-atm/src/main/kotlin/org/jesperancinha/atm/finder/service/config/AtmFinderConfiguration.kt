@@ -1,13 +1,8 @@
 package org.jesperancinha.atm.finder.service.config
 
 import com.fasterxml.jackson.databind.ObjectMapper
-import org.jesperancinha.atm.finder.camel.AtmService
-import org.jesperancinha.atm.finder.service.AtmLocatorServiceImpl
-import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.context.annotation.Bean
-import org.springframework.context.annotation.ComponentScan
 import org.springframework.context.annotation.Configuration
-import org.springframework.context.annotation.PropertySource
 import org.springframework.context.support.PropertySourcesPlaceholderConfigurer
 import org.springframework.web.client.RestTemplate
 import org.springframework.web.context.support.StandardServletEnvironment
@@ -16,28 +11,15 @@ import org.springframework.web.context.support.StandardServletEnvironment
  * Created by joaofilipesabinoesperancinha on 09-08-16.
  */
 @Configuration
-@ComponentScan(basePackages = ["org.jesperancinha.atm.finder.service"])
-@PropertySource(value = ["classpath:/application.properties"])
 class AtmFinderConfiguration {
-    @Autowired
-    var atmLocatorService: AtmLocatorServiceImpl? = null
-
-    @Autowired
-    lateinit var atmService: AtmService
-    @Bean
-    fun restTemplate(): RestTemplate {
-        return RestTemplate()
-    }
 
     @Bean
-    fun objectMapper(): ObjectMapper {
-        return ObjectMapper()
-    }
+    fun restTemplate(): RestTemplate = RestTemplate()
 
     @Bean
-    fun propertySourcesPlaceholderConfigurer(): PropertySourcesPlaceholderConfigurer {
-        val propertySourcesPlaceholderConfigurer = PropertySourcesPlaceholderConfigurer()
-        propertySourcesPlaceholderConfigurer.setEnvironment(StandardServletEnvironment())
-        return propertySourcesPlaceholderConfigurer
-    }
+    fun objectMapper(): ObjectMapper = ObjectMapper()
+
+    @Bean
+    fun propertySourcesPlaceholderConfigurer() = PropertySourcesPlaceholderConfigurer()
+        .apply { setEnvironment(StandardServletEnvironment()) }
 }

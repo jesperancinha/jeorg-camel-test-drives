@@ -9,9 +9,9 @@ import io.mockk.impl.annotations.InjectMockKs
 import io.mockk.impl.annotations.MockK
 import io.mockk.junit5.MockKExtension
 import io.mockk.mockk
-import org.jesperancinha.atm.finder.service.AtmLocatorServiceImpl
-import org.junit.Before
-import org.junit.Test
+import org.jesperancinha.atm.finder.service.AtmLocatorService
+import org.junit.jupiter.api.BeforeEach
+import org.junit.jupiter.api.Test
 import org.junit.jupiter.api.extension.ExtendWith
 import org.springframework.http.ResponseEntity
 import org.springframework.test.util.ReflectionTestUtils
@@ -23,15 +23,15 @@ import java.util.*
  * Created by joaofilipesabinoesperancinha on 29-07-16.
  */
 @ExtendWith(MockKExtension::class)
-class AtmLocatorServiceImplTest {
+class AtmLocatorServiceTest {
     @InjectMockKs
-    lateinit var atmLocatorService: AtmLocatorServiceImpl
+    lateinit var atmLocatorService: AtmLocatorService
 
     @MockK
     lateinit var restTemplate: RestTemplate
     private val mapper: ObjectMapper by lazy { ObjectMapper() }
 
-    @Before
+    @BeforeEach
     fun setUp() {
         ReflectionTestUtils.setField(atmLocatorService, MAPPER, mapper)
     }

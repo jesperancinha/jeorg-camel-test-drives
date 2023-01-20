@@ -19,4 +19,6 @@ target
 
 # JSPM
 jspm_packages
-v
+
+# Processes
+.attach*
