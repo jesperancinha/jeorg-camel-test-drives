@@ -37,19 +37,17 @@ After running your tomcat server you should be able to access the application th
 
 ## Build data
 
-* Spring MVC
+* Spring Boot
+
+* Spring Web
 
 * Spring Security
 
 * Camel DSL JSON
 
-* IntelliJ 2016.2
-
 * AngularJS
 
 * JSPM
-
-* Tomcat 7
 
 ## References
 
