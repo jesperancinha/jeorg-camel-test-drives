@@ -23,15 +23,11 @@
 
 ---
 
-[![alt text](https://raw.githubusercontent.com/jesperancinha/project-signer/master/project-signer-templates/icons-50/java-50.png "Java")](https://www.oracle.com/nl/java/)
-[![alt text](https://raw.githubusercontent.com/jesperancinha/project-signer/master/project-signer-templates/icons-50/lombok-50.png "Lombok")](https://projectlombok.org/)
 [![alt text](https://raw.githubusercontent.com/jesperancinha/project-signer/master/project-signer-templates/icons-50/kotlin-50.png "Kotlin")](https://kotlinlang.org/)
+[![alt text](https://raw.githubusercontent.com/jesperancinha/project-signer/master/project-signer-templates/icons-50/kotest-50.png "Kotest")](https://kotest.io/)
 [![alt text](https://raw.githubusercontent.com/jesperancinha/project-signer/master/project-signer-templates/icons-50/apache-camel-50.png "Camel Framework")](https://camel.apache.org/)
 [![alt text](https://raw.githubusercontent.com/jesperancinha/project-signer/master/project-signer-templates/icons-50/spring-50.png "Spring Framework")](https://spring.io/projects/spring-framework)
 [![alt text](https://raw.githubusercontent.com/jesperancinha/project-signer/master/project-signer-templates/icons-50/spring-boot-50.png "Spring Boot")](https://spring.io/projects/spring-boot)
-[![alt text](https://raw.githubusercontent.com/jesperancinha/project-signer/master/project-signer-templates/icons-50/jetty-50.png "Jetty")](https://www.eclipse.org/jetty/)
-[![alt text](https://raw.githubusercontent.com/jesperancinha/project-signer/master/project-signer-templates/icons-50/tomcat-50.png "Tomcat")](http://tomcat.apache.org/)
-[![alt text](https://raw.githubusercontent.com/jesperancinha/project-signer/master/project-signer-templates/icons-50/kotest-50.png "Kotest")](https://kotest.io/)
 [![alt text](https://raw.githubusercontent.com/jesperancinha/project-signer/master/project-signer-templates/icons-50/mockk-50.png "MockK")](https://mockk.io/)
 
 ---
@@ -39,6 +35,11 @@
 ## Introduction
 
 Study project for the Camel Framework
+
+#### Stable releases
+
+- [0.0.0](https://github.com/jesperancinha/jeorg-camel-test-drives/tree/0.0.0) - [5cdd1368826bdb51226056df9b6dbed59e0c7f92](https://github.com/jesperancinha/jeorg-camel-test-drives/tree/0.0.0) - Java / JDK11 / JUnit / Tomcat / Jetty / Spring
+- [1.0.0](https://github.com/jesperancinha/jeorg-camel-test-drives/tree/1.0.0) - [57405c73fbc285dbffc29c41098609fd22d3611f](https://github.com/jesperancinha/jeorg-camel-test-drives/tree/1.0.0) - Kotlin 1.8.0 / JDK19 / Kotest / Spring Boot / Spring
 
 ## Commands
 
