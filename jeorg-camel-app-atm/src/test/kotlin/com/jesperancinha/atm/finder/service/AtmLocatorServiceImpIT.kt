@@ -1,20 +1,22 @@
 package com.jesperancinha.atm.finder.service
 
-import com.jesperancinha.atm.finder.camel.AtmServiceIT
+import com.fasterxml.jackson.databind.ObjectMapper
+import com.jesperancinha.atm.finder.dao.atms
+import com.ninjasquad.springmockk.MockkBean
 import io.kotest.matchers.shouldBe
-import org.apache.camel.BeanInject
-import org.apache.camel.RoutesBuilder
-import org.apache.camel.builder.RouteBuilder
-import org.apache.camel.language.bean.Bean
+import io.mockk.every
 import org.apache.camel.test.spring.junit5.CamelSpringBootTest
 import org.jesperancinha.atm.finder.service.AtmLocatorService
 import org.jesperancinha.atm.finder.service.config.AtmFinderConfiguration
-import org.jesperancinha.atm.finder.service.payload.response.ATMMachine
 import org.junit.jupiter.api.Test
+import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration
-import org.springframework.context.annotation.Configuration
+import org.springframework.boot.test.context.SpringBootTest
+import org.springframework.http.ResponseEntity
 import org.springframework.test.context.ContextConfiguration
 import org.springframework.test.util.ReflectionTestUtils
+import org.springframework.test.util.ReflectionTestUtils.*
+import org.springframework.web.client.RestTemplate
 import java.util.*
 
 
@@ -23,42 +25,40 @@ import java.util.*
  */
 @CamelSpringBootTest
 @EnableAutoConfiguration
+@SpringBootTest
 @ContextConfiguration(
-    classes = [AtmFinderConfiguration::class, AtmLocatorServiceImpIT.ContextConfig::class]
+    classes = [AtmFinderConfiguration::class, AtmLocatorService::class]
 )
-class AtmLocatorServiceImpIT @BeanInject constructor(
-    private val atmLocatorService: AtmLocatorService
-) {
+class AtmLocatorServiceImpIT {
 
+    @Autowired
+    lateinit var atmLocatorService: AtmLocatorService
+
+    @Autowired
+    lateinit var objectMapper: ObjectMapper
+
+    @MockkBean
+    lateinit var restTemplate: RestTemplate
 
     @Throws(Exception::class)
     @Test
     fun `should find atm per city`() {
-        ReflectionTestUtils.setField(atmLocatorService, ATM_ENDPOINT, HTTPS_WWW_ING_NL_API_LOCATOR_ATMS)
-        val result: Array<ATMMachine> = atmLocatorService.getAtmPerCity(AMSTERDAM)
+        setField(atmLocatorService, ATM_ENDPOINT, HTTPS_WWW_ING_NL_API_LOCATOR_ATMS)
+        every {  restTemplate.getForEntity(
+            any<String>(),
+            String::class.java)
+        } returns  ResponseEntity.of(Optional.of("\n${objectMapper.writeValueAsString(atms)}"))
+        val result = atmLocatorService.getAtmPerCity(GOUDA)
         result.size shouldBe 122
         Arrays.stream(result)
             .forEach { atmMachine ->
-                atmMachine.address.city shouldBe AMSTERDAM
+                atmMachine.address.city shouldBe GOUDA
             }
-    }
-
-    @Configuration
-    internal class ContextConfig {
-        @Bean(ref="ref")
-        fun route(): RoutesBuilder {
-            return object : RouteBuilder() {
-                @Throws(java.lang.Exception::class)
-                override fun configure() {
-                    from("direct:test").to("mock:test")
-                }
-            }
-        }
     }
 
     companion object {
         private const val HTTPS_WWW_ING_NL_API_LOCATOR_ATMS = "https://www.ing.nl/api/locator/atms/"
         private const val ATM_ENDPOINT = "atmEndpoint"
-        private const val AMSTERDAM = "AMSTERDAM"
+        private const val GOUDA = "GOUDA"
     }
 }

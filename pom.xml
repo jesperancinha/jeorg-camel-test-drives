@@ -7,6 +7,7 @@
     <groupId>org.jesperancinha.atm</groupId>
     <artifactId>jeorg-camel-test-drives</artifactId>
     <version>1.0.0</version>
+    <name>CamelTD :: Parent</name>
     <modules>
         <module>jeorg-camel-app-atm</module>
     </modules>
@@ -14,7 +15,7 @@
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-        <java.version>17</java.version>
+        <java.version>19</java.version>
         <jdk.version>${java.version}</jdk.version>
         <maven.compiler.source>${java.version}</maven.compiler.source>
         <maven.compiler.target>${java.version}</maven.compiler.target>
@@ -22,6 +23,7 @@
         <maven-war-plugin.version>3.3.2</maven-war-plugin.version>
         <maven-jar-plugin.version>3.3.0</maven-jar-plugin.version>
         <kotlin.version>1.8.0</kotlin.version>
+        <springmockk.version>4.0.0</springmockk.version>
 
         <swagger-ui.version>2.0.24</swagger-ui.version>
         <logback-version>1.1.2</logback-version>
@@ -45,6 +47,8 @@
         <spring-boot-parent.version>3.0.1</spring-boot-parent.version>
         <kotest-assertions-core-jvm.version>5.5.4</kotest-assertions-core-jvm.version>
         <mockk-jvm.version>1.13.2</mockk-jvm.version>
+        <camel-test.version>3.20.1</camel-test.version>
+        <maven-surefire-plugin.version>3.0.0-M8</maven-surefire-plugin.version>
     </properties>
 
     <dependencyManagement>
@@ -186,6 +190,13 @@
                 <groupId>io.mockk</groupId>
                 <artifactId>mockk-jvm</artifactId>
                 <version>${mockk-jvm.version}</version>
+                <scope>test</scope>
+            </dependency>
+
+            <dependency>
+                <groupId>com.ninja-squad</groupId>
+                <artifactId>springmockk</artifactId>
+                <version>${springmockk.version}</version>
                 <scope>test</scope>
             </dependency>
 

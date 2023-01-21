@@ -3,6 +3,7 @@ package org.jesperancinha.atm.finder.service
 import com.fasterxml.jackson.databind.ObjectMapper
 import org.apache.camel.BeanInject
 import org.jesperancinha.atm.finder.service.payload.response.ATMMachine
+import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.beans.factory.annotation.Value
 import org.springframework.stereotype.Service
 import org.springframework.web.client.RestTemplate
@@ -14,14 +15,14 @@ import java.util.*
  */
 @Service
 class AtmLocatorService {
-    @BeanInject
+    @Autowired
     lateinit var restTemplate: RestTemplate
 
-    @BeanInject
-    lateinit var  mapper: ObjectMapper
+    @Autowired
+    lateinit var mapper: ObjectMapper
 
     @Value("\${atm.endpoint}")
-    lateinit var  atmEndpoint: String
+    lateinit var atmEndpoint: String
 
     @Throws(IOException::class)
     fun getAtmPerCity(city: String): Array<ATMMachine> {

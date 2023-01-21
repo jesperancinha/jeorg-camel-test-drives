@@ -7,9 +7,6 @@
         <groupId>org.jesperancinha.atm</groupId>
         <version>1.0.0</version>
     </parent>
-    <properties>
-        <camel-test.version>3.20.1</camel-test.version>
-    </properties>
 
     <modelVersion>4.0.0</modelVersion>
 
@@ -125,6 +122,12 @@
         <dependency>
             <groupId>io.mockk</groupId>
             <artifactId>mockk-jvm</artifactId>
+            <scope>test</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>com.ninja-squad</groupId>
+            <artifactId>springmockk</artifactId>
             <scope>test</scope>
         </dependency>
     </dependencies>
@@ -251,6 +254,17 @@
                 <groupId>org.jesperancinha.plugins</groupId>
                 <artifactId>omni-coveragereporter-maven-plugin</artifactId>
                 <version>${omni-coveragereporter-maven-plugin.version}</version>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>${maven-surefire-plugin.version}</version>
+                <configuration>
+                    <includes>
+                        <include>**/*Test</include>
+                        <include>**/*IT</include>
+                    </includes>
+                </configuration>
             </plugin>
         </plugins>
     </build>
