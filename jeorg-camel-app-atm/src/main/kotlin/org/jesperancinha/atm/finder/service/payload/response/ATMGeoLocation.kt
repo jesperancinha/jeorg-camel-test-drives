@@ -7,10 +7,10 @@ import com.fasterxml.jackson.annotation.JsonProperty
  * Created by joaofilipesabinoesperancinha on 28-07-16.
  */
 @JsonIgnoreProperties(ignoreUnknown = true)
-class ATMGeoLocation {
+data class ATMGeoLocation(
     @JsonProperty("lat")
-    private val lat: Double? = null
+    val lat: Double,
 
     @JsonProperty("lng")
-    private val lng: Double? = null
-}
+    val lng: Double,
+)

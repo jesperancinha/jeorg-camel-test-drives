@@ -15,6 +15,7 @@ import org.junit.jupiter.api.Test
 import org.junit.jupiter.api.extension.ExtendWith
 import org.springframework.http.ResponseEntity
 import org.springframework.test.util.ReflectionTestUtils
+import org.springframework.test.util.ReflectionTestUtils.*
 import org.springframework.web.client.RestTemplate
 import java.io.InputStreamReader
 import java.util.*
@@ -29,11 +30,13 @@ class AtmLocatorServiceTest {
 
     @MockK
     lateinit var restTemplate: RestTemplate
+
     private val mapper: ObjectMapper by lazy { ObjectMapper() }
 
     @BeforeEach
     fun setUp() {
-        ReflectionTestUtils.setField(atmLocatorService, MAPPER, mapper)
+        setField(atmLocatorService, MAPPER, mapper)
+        setField(atmLocatorService, ATM_ENDPOINT, "")
     }
 
     @Throws(Exception::class)
@@ -66,6 +69,7 @@ class AtmLocatorServiceTest {
 
     companion object {
         private const val MAPPER = "mapper"
+        private const val ATM_ENDPOINT = "atmEndpoint"
         private const val MOCK_CLEAN_RESPONSE1_JSON = "/mockCleanResponse1.json"
         private const val AMSTERDAM = "AMSTERDAM"
         private const val MOCK_GARBAGE_RESPONSE1_JSON = "/mockGarbageResponse1.json"

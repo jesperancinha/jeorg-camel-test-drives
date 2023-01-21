@@ -39,7 +39,7 @@ After running your tomcat server you should be able to access the application th
 
 * Spring MVC
 
-* Sprinc Security
+* Spring Security
 
 * Camel DSL JSON
 
