@@ -41,13 +41,6 @@ Study project for the Camel Framework
 - [0.0.0](https://github.com/jesperancinha/jeorg-camel-test-drives/tree/0.0.0) - [5cdd1368826bdb51226056df9b6dbed59e0c7f92](https://github.com/jesperancinha/jeorg-camel-test-drives/tree/0.0.0) - Java / JDK11 / JUnit / Tomcat / Jetty / Spring
 - [1.0.0](https://github.com/jesperancinha/jeorg-camel-test-drives/tree/1.0.0) - [57405c73fbc285dbffc29c41098609fd22d3611f](https://github.com/jesperancinha/jeorg-camel-test-drives/tree/1.0.0) - Kotlin 1.8.0 / JDK19 / Kotest / Spring Boot / Spring
 
-## Commands
-
-```bash
-git fetch <origin>
-git merge <origin>/master --allow-unrelated-histories
-```
-
 ## References
 
 -   [Apache Camel](https://camel.apache.org/)
