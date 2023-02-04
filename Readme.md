@@ -38,8 +38,8 @@ Study project for the Camel Framework
 
 #### Stable releases
 
-- [0.0.0](https://github.com/jesperancinha/jeorg-camel-test-drives/tree/0.0.0) - [5cdd1368826bdb51226056df9b6dbed59e0c7f92](https://github.com/jesperancinha/jeorg-camel-test-drives/tree/0.0.0) - Java / JDK11 / JUnit / Tomcat / Jetty / Spring
-- [1.0.0](https://github.com/jesperancinha/jeorg-camel-test-drives/tree/1.0.0) - [57405c73fbc285dbffc29c41098609fd22d3611f](https://github.com/jesperancinha/jeorg-camel-test-drives/tree/1.0.0) - Kotlin 1.8.0 / JDK19 / Kotest / Spring Boot / Spring
+-   [0.0.0](https://github.com/jesperancinha/jeorg-camel-test-drives/tree/0.0.0) - [5cdd1368826bdb51226056df9b6dbed59e0c7f92](https://github.com/jesperancinha/jeorg-camel-test-drives/tree/0.0.0) - Java / JDK11 / JUnit / Tomcat / Jetty / Spring
+-   [1.0.0](https://github.com/jesperancinha/jeorg-camel-test-drives/tree/1.0.0) - [57405c73fbc285dbffc29c41098609fd22d3611f](https://github.com/jesperancinha/jeorg-camel-test-drives/tree/1.0.0) - Kotlin 1.8.0 / JDK19 / Kotest / Spring Boot / Spring
 
 ## References
 
@@ -49,8 +49,8 @@ Study project for the Camel Framework
 
 [![alt text](https://raw.githubusercontent.com/jesperancinha/project-signer/master/project-signer-templates/icons-20/JEOrgLogo-20.png "João Esperancinha Homepage")](http://joaofilipesabinoesperancinha.nl)
 [![GitHub followers](https://img.shields.io/github/followers/jesperancinha.svg?label=Jesperancinha&style=social "GitHub")](https://github.com/jesperancinha)
-[![Twitter Follow](https://img.shields.io/twitter/follow/joaofse?label=João%20Esperancinha&style=social "Twitter")](https://twitter.com/joaofse)
 [![alt text](https://raw.githubusercontent.com/jesperancinha/project-signer/master/project-signer-templates/icons-20/mastodon-20.png "Mastodon")](https://masto.ai/@jesperancinha)
+[![Twitter Follow](https://img.shields.io/twitter/follow/joaofse?label=João%20Esperancinha&style=social "Twitter")](https://twitter.com/joaofse)
 | [Sessionize](https://sessionize.com/joao-esperancinha/)
 | [Spotify](https://open.spotify.com/user/jlnozkcomrxgsaip7yvffpqqm?si=b54b89eae8894960)
 | [Medium](https://medium.com/@jofisaes)
