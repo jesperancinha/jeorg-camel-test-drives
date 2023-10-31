@@ -27,7 +27,7 @@
 
         <swagger-ui.version>2.0.24</swagger-ui.version>
         <logback-version>1.1.2</logback-version>
-        <jetty.version>11.0.17</jetty.version>
+        <jetty.version>11.0.18</jetty.version>
         <camel.version>4.1.0</camel.version>
         <spring.version>6.0.4</spring.version>
         <spring.security.version>6.1.5</spring.security.version>
