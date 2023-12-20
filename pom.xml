@@ -28,7 +28,7 @@
         <swagger-ui.version>2.0.24</swagger-ui.version>
         <logback-version>1.1.2</logback-version>
         <jetty.version>11.0.19</jetty.version>
-        <camel.version>4.2.0</camel.version>
+        <camel.version>4.3.0</camel.version>
         <spring.version>6.0.4</spring.version>
         <spring.security.version>6.2.1</spring.security.version>
         <log4j.version>1.2.17</log4j.version>
@@ -47,7 +47,7 @@
         <spring-boot-parent.version>3.2.0</spring-boot-parent.version>
         <kotest-assertions-core-jvm.version>5.8.0</kotest-assertions-core-jvm.version>
         <mockk-jvm.version>1.13.8</mockk-jvm.version>
-        <camel-test.version>4.2.0</camel-test.version>
+        <camel-test.version>4.3.0</camel-test.version>
         <maven-surefire-plugin.version>3.2.3</maven-surefire-plugin.version>
     </properties>
 
