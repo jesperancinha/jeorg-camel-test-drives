@@ -1,4 +1,4 @@
-package com.jesperancinha.atm.finder.service
+package org.jesperancinha.atm.finder.service
 
 import com.fasterxml.jackson.databind.ObjectMapper
 import com.jesperancinha.atm.finder.dao.atms
@@ -6,7 +6,6 @@ import com.ninjasquad.springmockk.MockkBean
 import io.kotest.matchers.shouldBe
 import io.mockk.every
 import org.apache.camel.test.spring.junit5.CamelSpringBootTest
-import org.jesperancinha.atm.finder.service.AtmLocatorService
 import org.jesperancinha.atm.finder.service.config.AtmFinderConfiguration
 import org.junit.jupiter.api.Test
 import org.springframework.beans.factory.annotation.Autowired
@@ -14,7 +13,6 @@ import org.springframework.boot.autoconfigure.EnableAutoConfiguration
 import org.springframework.boot.test.context.SpringBootTest
 import org.springframework.http.ResponseEntity
 import org.springframework.test.context.ContextConfiguration
-import org.springframework.test.util.ReflectionTestUtils
 import org.springframework.test.util.ReflectionTestUtils.*
 import org.springframework.web.client.RestTemplate
 import java.util.*

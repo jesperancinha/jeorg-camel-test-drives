@@ -1,4 +1,4 @@
-package com.jesperancinha.atm.finder.camel
+package org.jesperancinha.atm.finder.camel
 
 import com.fasterxml.jackson.databind.ObjectMapper
 import com.jesperancinha.atm.finder.dao.atms
@@ -9,8 +9,6 @@ import org.apache.camel.RoutesBuilder
 import org.apache.camel.builder.RouteBuilder
 import org.apache.camel.language.bean.Bean
 import org.apache.camel.test.spring.junit5.CamelSpringBootTest
-import org.jesperancinha.atm.finder.camel.AtmProvider
-import org.jesperancinha.atm.finder.camel.AtmService
 import org.jesperancinha.atm.finder.service.AtmLocatorService
 import org.jesperancinha.atm.finder.service.config.AtmFinderConfiguration
 import org.junit.jupiter.api.BeforeEach
@@ -21,7 +19,6 @@ import org.springframework.boot.test.context.SpringBootTest
 import org.springframework.context.annotation.Configuration
 import org.springframework.http.ResponseEntity
 import org.springframework.test.context.ContextConfiguration
-import org.springframework.test.util.ReflectionTestUtils
 import org.springframework.test.util.ReflectionTestUtils.*
 import org.springframework.web.client.RestTemplate
 import java.util.*
