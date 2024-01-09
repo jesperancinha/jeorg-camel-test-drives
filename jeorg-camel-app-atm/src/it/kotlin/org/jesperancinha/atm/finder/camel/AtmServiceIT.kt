@@ -16,6 +16,7 @@ import org.junit.jupiter.api.Test
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration
 import org.springframework.boot.test.context.SpringBootTest
+import org.springframework.boot.test.context.SpringBootTest.WebEnvironment.RANDOM_PORT
 import org.springframework.context.annotation.Configuration
 import org.springframework.http.ResponseEntity
 import org.springframework.test.context.ContextConfiguration
@@ -29,7 +30,7 @@ import java.util.*
  */
 @CamelSpringBootTest
 @EnableAutoConfiguration
-@SpringBootTest
+@SpringBootTest(webEnvironment = RANDOM_PORT)
 @ContextConfiguration(
     classes = [AtmFinderConfiguration::class, AtmLocatorService::class, AtmService::class]
 )
