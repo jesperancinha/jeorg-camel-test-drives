@@ -9,7 +9,7 @@ jobs:
 
     steps:
       - checkout
-
+      - run: apk add maven
       - restore_cache:
           keys:
             - v1-dependencies-{{ checksum "pom.xml" }}
