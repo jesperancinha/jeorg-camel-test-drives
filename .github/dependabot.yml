@@ -22,3 +22,9 @@ updates:
         patterns:
           - "camel*"
           - "*camel*"
+      spring:
+        patterns:
+          - "spring"
+          - "spring*"
+          - "*spring*"
+  
