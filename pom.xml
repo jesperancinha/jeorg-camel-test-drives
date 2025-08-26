@@ -42,7 +42,7 @@
         <jaxb-api.version>2.3.1</jaxb-api.version>
         <omni-coveragereporter-maven-plugin.version>0.4.5</omni-coveragereporter-maven-plugin.version>
         <spring-boot-parent.version>3.5.0</spring-boot-parent.version>
-        <kotest-assertions-core-jvm.version>6.0.0</kotest-assertions-core-jvm.version>
+        <kotest-assertions-core-jvm.version>6.0.1</kotest-assertions-core-jvm.version>
         <mockk-jvm.version>1.14.5</mockk-jvm.version>
         <camel-test.version>4.14.0</camel-test.version>
         <maven-surefire-plugin.version>3.5.3</maven-surefire-plugin.version>
