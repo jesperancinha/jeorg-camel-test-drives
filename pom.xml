@@ -23,7 +23,7 @@
         <maven-war-plugin.version>3.5.0</maven-war-plugin.version>
         <maven-jar-plugin.version>3.5.0</maven-jar-plugin.version>
         <kotlin.version>2.2.21</kotlin.version>
-        <springmockk.version>4.0.2</springmockk.version>
+        <springmockk.version>5.0.1</springmockk.version>
 
         <swagger-ui.version>2.0.24</swagger-ui.version>
         <logback-version>1.1.2</logback-version>
